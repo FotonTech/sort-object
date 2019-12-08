@@ -19,7 +19,7 @@ export const orderObjectKeys = (ast: ts.SourceFile) => {
         }
       }
 
-      statement.declarationList = ts.createVariableDeclarationList(declarations)
+      statement.declarationList = ts.createVariableDeclarationList(declarations, statement.declarationList.flags)
     }
   }
 
