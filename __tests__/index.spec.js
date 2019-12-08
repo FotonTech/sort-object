@@ -6,6 +6,6 @@ beforeEach(() => {})
 
 describe('works', () => {
   it('works', () => {
-    expect(wip()).toEqual(33)
+    expect(wip()).toBeUndefined()
   })
 })
