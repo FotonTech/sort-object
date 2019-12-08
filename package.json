@@ -55,7 +55,7 @@
     "patch": "npm version patch && npm publish",
     "minor": "npm version minor && npm publish",
     "major": "npm version major && npm publish",
-    "prepare": "yarn lint && yarn test && yarn build",
+    "prepare": "yarn lint && yarn build",
     "postpublish": "git push origin master --follow-tags"
   },
   "lint-staged": {
