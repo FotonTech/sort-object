@@ -1,5 +1,7 @@
 import fs from 'fs'
-import * as ts from 'typescript'
+import ts from 'typescript'
+
+import { orderObjectKeys } from './orderObjectKeys'
 
 export const generateResources = (files: string[]) => {
   for (const filename of files) {
@@ -7,7 +9,6 @@ export const generateResources = (files: string[]) => {
 
     const ast = ts.createSourceFile(filename, source, ts.ScriptTarget.Latest, true)
 
-    // now we have the file as ast
-    console.log(source, ast)
+    orderObjectKeys(ast)
   }
 }
