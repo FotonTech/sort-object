@@ -14,14 +14,20 @@ export const orderObjectKeys = (ast: ts.SourceFile) => {
           const { properties } = declaration.initializer as ts.ObjectLiteralExpression
 
           const orderedProperties = orderProperties(properties)
-          console.log(orderedProperties)
+
+          declaration.initializer = ts.createObjectLiteral(orderedProperties, true)
         }
       }
+
+      statement.declarationList = ts.createVariableDeclarationList(declarations)
     }
   }
+
+  ast.statements = statements
+  return ast
 }
 
 export const orderProperties = (properties: ts.NodeArray<ts.ObjectLiteralElementLike>) => {
   // @ts-ignore
-  return sortBy(properties, [o => o.name?.escapedText]) as ts.NodeArray<ts.ObjectLiteralElementLike>
+  return sortBy(properties, [o => o.name?.escapedText])
 }

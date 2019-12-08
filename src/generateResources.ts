@@ -9,6 +9,10 @@ export const generateResources = (files: string[]) => {
 
     const ast = ts.createSourceFile(filename, source, ts.ScriptTarget.Latest, true)
 
-    orderObjectKeys(ast)
+    const orderedAst = orderObjectKeys(ast)
+
+    const printer = ts.createPrinter()
+    const data = printer.printFile(orderedAst)
+    fs.writeFileSync(filename, data, { encoding: 'utf8' })
   }
 }
