@@ -20,5 +20,5 @@ yarn add @fotoncompany/sort-object
 
 Use the cli with the `--src` flag as follows:
 ```
-@fotoncompany/sort-object --src ./**/*.ts
+sort-object --src ./**/*.ts
 ```
