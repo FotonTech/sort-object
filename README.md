@@ -20,5 +20,10 @@ yarn add @fotoncompany/sort-object
 
 Use the cli with the `--src` flag as follows:
 ```
-sort-object --src ./**/*.ts
+sort-object --src ./packages
+```
+
+You can filter which files will be formated through the `--regex` flag, as shown below. The Regex must be a string that can be parsed.
+```
+sort-object --src ./packages --regex '.input.ts'
 ```

@@ -1,6 +1,6 @@
 {
   "name": "@fotoncompany/sort-object",
-  "version": "0.0.1",
+  "version": "0.2.2",
   "description": "Sort an object's key within source code automatically as part of linting",
   "main": "dist/index.js",
   "module": "dist/index.js",
