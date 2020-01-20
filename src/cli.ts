@@ -11,9 +11,9 @@ export const run = () => {
     .describe('regex', 'Regex to match files')
     .default('regex', /./g).argv
 
-  const jsFiles = shell.find(argv.src).filter(path => /\.(js|ts|tsx)$/.test(path))
+  const files = shell.find(argv.src).filter(path => /\.(js|ts|tsx)$/.test(path))
 
   const regex = new RegExp(argv.regex)
 
-  generateResources(jsFiles.filter(file => regex.test(file)))
+  generateResources(files.filter(file => regex.test(file)))
 }
