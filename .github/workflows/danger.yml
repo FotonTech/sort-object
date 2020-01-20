@@ -20,4 +20,4 @@ jobs:
       - name: Danger
         run: yarn danger ci
         env:
-          DANGER_GITHUB_API_TOKEN: ${{ secrets.githubToken }}
+          GITHUB_TOKEN: ${{ secrets.githubToken }}
